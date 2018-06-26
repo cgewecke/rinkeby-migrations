@@ -4,10 +4,14 @@ const fs = require('fs');
 let secrets;
 let infura;
 let mnemonic;
+let mint;
+let ganache;
 if (fs.existsSync('secrets.js')) {
   secrets = require('./secrets');
   mnemonic = secrets.mnemonic;
   infura = secrets.infura;
+  mint = secrets.mint;
+  ganache = 'floor avocado fortune forward basket combine they joy trap client quick volume';
 } else {
   console.log('no secrets.js found. You can only deploy to the testrpc.');
   mnemonic = '';
@@ -24,12 +28,20 @@ module.exports = {
     ropsten: {
       provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/${infura}`),
       network_id: 3,
-      gas: 4700000,
+      gas: 6000000,
       gasPrice: 20000000000,
     },
+
+    // Roderik's parity cluster testnet for SettleMint
+    minttestnet: {
+      provider: () => new HDWalletProvider(mint, 'https://minttestnet.settlemint.com'),
+      gasPrice: 0x00,
+      network_id: '8995',
+    },
+
+    // Ganache
     development: {
-      host: 'localhost',
-      port: 8545,
+      provider: () => new HDWalletProvider(ganache, `http://127.0.0.1:8545`),
       network_id: '*',
     }
   },
