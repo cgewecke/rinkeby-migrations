@@ -1,14 +1,15 @@
 const HDWalletProvider = require('truffle-hdwallet-provider');
-const fs = require('fs');
 
 // first read in the secrets.json to get our mnemonic
 let secrets;
+let infura;
 let mnemonic;
-if (fs.existsSync('secrets.json')) {
-  secrets = JSON.parse(fs.readFileSync('secrets.json', 'utf8'));
+if (fs.existsSync('secrets.js')) {
+  secrets = require('./secrets);
   mnemonic = secrets.mnemonic;
+  infura = secrets.infura;
 } else {
-  console.log('no secrets.json found. You can only deploy to the testrpc.');
+  console.log('no secrets.js found. You can only deploy to the testrpc.');
   mnemonic = '';
 }
 
