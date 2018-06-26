@@ -1,0 +1,4 @@
+[submodule "truffle"]
+	path = truffle
+	url = https://github.com/trufflesuite/truffle.git
+	branch = async-deployer
