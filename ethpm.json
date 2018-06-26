@@ -1,0 +1,22 @@
+{
+  "package_name": "plcr-revival",
+  "version": "1.3.0",
+  "description": "PLCR voting for ERC20 tokens",
+  "authors": [
+    "Yorke Rhodes",
+    "Cem Ozer",
+    "Aspyn Palatnick"
+  ],
+  "keywords": [
+    "tokens",
+    "consensys",
+    "plcr"
+  ],
+  "dependencies": {
+    "tokens": "1.0.0",
+    "dll": "1.0.4",
+    "attrstore": "1.0.0",
+    "zeppelin": "1.3.0"
+  },
+  "license": "Apache 2.0"
+}
