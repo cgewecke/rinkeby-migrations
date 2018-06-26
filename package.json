@@ -5,12 +5,11 @@
   "scripts": {
     "build": "cd truffle/packages/truffle && npm run build",
     "bootstrap": "./bootstrap.sh",
-    "install": "./node_modules/.bin/truffle install",
-    "compile": "./node_modules/.bin/truffle compile",
-    "test": "./node_modules/.bin/truffle test",
-    "migrate:dev": "/.node_modules/.bin/truffle migrate --network development",
-    "migrate:rinkeby": "./node_modules/.bin/truffle migrate --network rinkeby",
-    "migrate:dry": "./node_modules/.bin/truffle migrate --dry-run"
+    "truffle": "./truffle/packages/truffle/build/cli.bundled.js"
+    "compile": "npm run truffle -- compile",
+    "migrate:dev": "npm run truffle -- migrate --network development",
+    "migrate:rinkeby": "npm run truffle -- migrate --network rinkeby",
+    "migrate:dry": "npm run truffle -- --dry-run"
   },
   "author": "Yorke Rhodes <yorke.rhodesiv@consensys.net>, Aspyn Palatnick <aspyn.palatnick@consensys.net>, Cem Ozer <cem.ozer@consensys.net>",
   "license": "ISC",
