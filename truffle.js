@@ -11,7 +11,7 @@ if (fs.existsSync('secrets.js')) {
   mnemonic = secrets.mnemonic;
   infura = secrets.infura;
   mint = secrets.mint;
-  ganache = 'floor avocado fortune forward basket combine they joy trap client quick volume';
+  ganache = 'dial dry credit solar dirt supply sister town more thank cheap busy';
 } else {
   console.log('no secrets.js found. You can only deploy to the testrpc.');
   mnemonic = '';
@@ -44,7 +44,7 @@ module.exports = {
     // Ganache
     development: {
       provider: () => new HDWalletProvider(ganache, `http://127.0.0.1:8545`),
-      network_id: '*',
+      network_id: '*'
     }
   },
 };

@@ -16,6 +16,6 @@
   "author": "Yorke Rhodes <yorke.rhodesiv@consensys.net>, Aspyn Palatnick <aspyn.palatnick@consensys.net>, Cem Ozer <cem.ozer@consensys.net>",
   "license": "ISC",
   "dependencies": {
-    "truffle-hdwallet-provider": "git+https://github.com/trufflesuite/truffle-hdwallet-provider.git#web3-one"
+    "truffle-hdwallet-provider": "^1.0.0-web3one.0"
   }
 }
